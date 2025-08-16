@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ChromaticHorizon {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+    
+        String color = sc.nextLine().trim();
+        
+        
+        if (color.equalsIgnoreCase("BLUE")) {
+            System.out.println("The Chromatic Horizon whispers: It is Dawn");
+        } 
+        else if (color.equalsIgnoreCase("RED")) {
+            System.out.println("The Chromatic Horizon reveals: It is Dusk");
+        } 
+        else {
+            System.out.println("The Chromatic Riddle unfolds: Invalid Input");
+        }
+        
+        sc.close();
+    }
+}
