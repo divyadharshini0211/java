@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class TimeLeap {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+    
+        int x = sc.nextInt();     
+        int y = sc.nextInt();     
+        double ti = sc.nextDouble(); 
+        double tj = sc.nextDouble(); 
+
+    
+        if (tj >= ti) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        
+        double tiHours = convertToHours(ti);
+        double tjHours = convertToHours(tj);
+
+
+        double availableTime = tiHours - tjHours;
+
+    
+        double requiredTime = (double) x / y;
+
+        if (requiredTime <= availableTime) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        sc.close();
+    }
+
+    
+    private static double convertToHours(double hhmm) {
+        int hours = (int) hhmm;
+        double minutes = (hhmm - hours) * 100;
+        return hours + (minutes / 60);
+    }
+}
