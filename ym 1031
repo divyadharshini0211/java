@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class TireWhisperer {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        String[] tireNames = {
+            "Front-left", "Rear-left", "Rear-right", "Front-right"
+        };
+
+    
+        for (String tire : tireNames) {
+            double pressure = sc.nextDouble(); // read floating-point value
+
+            if (pressure < 33) {
+                System.out.println(tire + " : Inflate");
+            } 
+            else if (pressure > 33) {
+                System.out.println(tire + " : Deflate");
+            } 
+            else { 
+                System.out.println(tire + " : Untouched");
+            }
+        }
+
+        sc.close();
+    }
+}
