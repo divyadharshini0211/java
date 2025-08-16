@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class DragonCityGame {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); 
+        int k = sc.nextInt(); 
+        
+        int points = n * 2; 
+        int replays = 1; 
+        
+        while (points < k) {
+            replays++;
+            points += 5; 
+        }
+        
+        System.out.println("The minimum count of n levels is " + replays);
+        sc.close();
+    }
+}
