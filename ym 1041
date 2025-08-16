@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class PaginationPages {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long totalDigits = sc.nextLong();
+        sc.close();
+
+        long pages = 0;
+        long digitsUsed = 0;
+        long start = 1;
+        int digitsPerPage = 1;
+
+        while (true) {
+            long end = start * 10 - 1;
+            long count = end - start + 1; 
+            long blockDigits = count * digitsPerPage;
+
+            if (digitsUsed + blockDigits >= totalDigits) {
+                
+                long remaining = totalDigits - digitsUsed;
+                if (remaining % digitsPerPage == 0) {
+                    pages += remaining / digitsPerPage;
+                    System.out.println(pages);
+                } else {
+                    System.out.println("Impossible!");
+                }
+                return;
+            }
+
+        
+            digitsUsed += blockDigits;
+            pages += count;
+            start *= 10;
+            digitsPerPage++;
+        }
+    }
