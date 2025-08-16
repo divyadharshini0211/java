@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class StudyGroups {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int totalStudents = sc.nextInt();
+        int numGroups = sc.nextInt();
+        
+    
+        int studentsPerGroup = totalStudents / numGroups;
+        int leftOut = totalStudents % numGroups;
+        
+
+        System.out.println("The number of students in each team is " 
+                           + studentsPerGroup + " and left out is " + leftOut);
+        
+        sc.close();
+    }
+}
