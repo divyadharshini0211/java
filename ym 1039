@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class MagicalLibrary {
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int x = sc.nextInt(); 
+        int y = sc.nextInt(); 
+        int n = sc.nextInt(); 
+        
+        int alaricPower = gcd(x, n);
+        int seraphinaPower = gcd(y, n);
+        
+        if (alaricPower >= seraphinaPower) {
+            System.out.println("Alaric unravels the most Mystical Scrolls in the Grand Library!");
+        } else {
+            System.out.println("Seraphina unravels the most Mystical Scrolls in the Grand Library!");
+        }
+        
+        sc.close();
+    }
+}
